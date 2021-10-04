@@ -208,6 +208,7 @@ class API(object):
         longitude=None,
         latitude=None,
         bbox=None,
+        min_cloud_cover=None,
         max_cloud_cover=None,
         start_date=None,
         end_date=None,
@@ -255,7 +256,7 @@ class API(object):
         cloud_cover_filter = None
         if max_cloud_cover:
             cloud_cover_filter = CloudCoverFilter(
-                max=max_cloud_cover, include_unknown=False
+                min=min_cloud_cover, max=max_cloud_cover,include_unknown=False
             )
 
         scene_filter = SceneFilter(
